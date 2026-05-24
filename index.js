@@ -36,6 +36,24 @@ function isTelemetryIngestRequest(req) {
     );
 }
 
+function isLauncherRuntimeRequest(req) {
+    const path = (req.originalUrl || req.url || "").split("?")[0];
+    return (
+        path === "/api/launcher/version" ||
+        path === "/api/launcher/beta-status" ||
+        path === "/api/launcher/online-count" ||
+        path === "/api/launcher/leaderboard" ||
+        path === "/api/launcher/launch-ticket" ||
+        path === "/api/launcher/discord/start" ||
+        path === "/api/launcher/discord/callback" ||
+        path === "/api/launcher/discord/poll" ||
+        path.startsWith("/api/launcher/discord/poll/") ||
+        path.startsWith("/api/launcher/discord/session/") ||
+        path === "/api/launcher/friends" ||
+        path === "/api/launcher/friends/summary"
+    );
+}
+
 gsAuth.ensureStores();
 setInterval(() => gsAuth.cleanupStores(), 60000);
 
@@ -130,7 +148,7 @@ async function connectDatabase() {
 app.use(rateLimit({
     windowMs: 0.5 * 60 * 1000,
     max: 55,
-    skip: req => isFeedbackRequest(req) || isTelemetryIngestRequest(req)
+    skip: req => isFeedbackRequest(req) || isTelemetryIngestRequest(req) || isLauncherRuntimeRequest(req)
 }));
 app.use("/fortnite/api/feedback", express.raw({ type: () => true, limit: "25mb" }));
 app.use((req, res, next) => {

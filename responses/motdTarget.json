@@ -1,0 +1,68 @@
+{
+    "contentType": "collection",
+    "contentId": "motd-default-collection",
+    "tcId": "634e8e85-e2fc-4c68-bb10-93604cf6605f",
+    "contentItems": [
+      {
+        "contentType": "content-item",
+        "contentId": "46874c56-0973-4cbe-ac98-b580c5b36df5",
+        "tcId": "61fb3dd8-f23d-45cc-9058-058ab223ba5c",
+        "contentFields": {
+          "body": {
+            "ar": "Project founded by Ban2ftn and Shark",
+            "en": "Project founded by Ban2ftn and Shark",
+            "de": "Project founded by Ban2ftn and Shark",
+            "es": "Project founded by Ban2ftn and Shark",
+            "es-419": "Project founded by Ban2ftn and Shark",
+            "fr": "Project founded by Ban2ftn and Shark",
+            "it": "Project founded by Ban2ftn and Shark",
+            "ja": "Project founded by Ban2ftn and Shark",
+            "ko": "Project founded by Ban2ftn and Shark",
+            "pl": "Project founded by Ban2ftn and Shark",
+            "pt-BR": "Project founded by Ban2ftn and Shark",
+            "ru": "Project founded by Ban2ftn and Shark",
+            "tr": "Project founded by Ban2ftn and Shark"
+          },
+          "entryType": "Website",
+          "image": [
+            {
+              "width": 1920,
+              "height": 1080,
+              "url": "https://i.imgur.com/byYFCw2.png"
+            }
+          ],
+          "tabTitleOverride": "CUBE",
+          "tileImage": [
+            {
+              "width": 1024,
+              "height": 512,
+              "url": "https://i.imgur.com/byYFCw2.png"
+            }
+          ],
+          "title": {
+            "ar": "مرحبًا بك في CUBE!",
+            "en": "Welcome to CUBE!",
+            "de": "Willkommen bei CUBE!",
+            "es": "¡Bienvenidos a CUBE!",
+            "es-419": "¡Bienvenidos a CUBE!",
+            "fr": "Bienvenue sur CUBE !",
+            "it": "Benvenuto in CUBE!",
+            "ja": "CUBEへようこそ！",
+            "ko": "CUBE에 오신 것을 환영합니다!",
+            "pl": "Witaj w CUBEze!",
+            "pt-BR": "Bem-vindo ao CUBE!",
+            "ru": "Добро пожаловать в CUBE!",
+            "tr": "CUBE'a Hoş Geldiniz!"
+          },
+          "videoAutoplay": false,
+          "videoLoop": false,
+          "videoMute": false,
+          "videoStreamingEnabled": false,
+          "websiteButtonText": "Look News",
+          "websiteURL": "https://discord.gg/PpwPpHUrMr"
+        },
+        "contentHash": "CUBEbackendcontenthashtylawin",
+        "contentSchemaName": "MotdWebsiteNewsWithVideo"
+        }
+    ]
+}

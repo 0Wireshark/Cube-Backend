@@ -1,0 +1,213 @@
+{
+    "moderators": ["1416023731490521149", "1259806457596215407", "1481759966988599387"],
+  "discord": {
+    "bUseDiscordBot": true,
+    "bot_token": "MTUwMjczOTk4OTc3NDA3ODA2NA.GfX2B9.vXL99RJgFIPx0kAblPceknFrqKVGKwBzhvsT18",
+    "guildId": "1482414428430405742",
+    "bEnableInGamePlayerCount": true
+  },
+  "postgres": {
+    "host": "127.0.0.1",
+    "port": 5432,
+    "database": "CUBE",
+    "user": "postgres",
+    "password": "postgres",
+    "ssl": false,
+    "autoMigrate": true
+  },
+    "chat": {
+        "//": "disabling global chat can help the server to perform faster as less resources are used.",
+        "EnableGlobalChat": false
+    },
+    "gifting": {
+      "//": "0 means gifts can be sent immediately after accepting a friend request.",
+      "friendshipDelayDays": 0
+    },
+    "voice": {
+      "enabled": true,
+      "provider": "rtcp",
+      "implementation": "EOSVoiceChat",
+      "timeoutMs": 6000,
+      "vivox": {
+        "enabled": false,
+        "issuer": "epicgames",
+        "domain": "mtu1xp.vivox.com",
+        "secret": ""
+      },
+      "rtcp": {
+        "enabled": true,
+        "deploymentId": "bc96064e79624f0fbf94dcf913d68b62",
+        "clientId": "xyza7891s6HFvfkZDCiZSLSvHC4qM730",
+        "clientSecret": "huEjS1xhMoW25r9lWCYXWOKvVHLe2tGBGoBmexI+UEw"
+      }
+    },
+
+    "bEnableDebugLogs": true,
+    "bEnableFormattedLogs": true,
+    "bEnableCubeUser": false,
+    "bEnableCrossBans": false,
+
+    "//": "If you want to use the backend on CUBE, leave 3551 as the port",
+    "port": 3551, 
+    
+    "Api": {
+      "bApiKey": "ur-api-key",
+      "reasons": {
+        "Kill": 25,
+        "Win": 50
+      }
+    },
+
+    "Website": {
+      "bUseWebsite": true,
+      "clientId": "your-client-id-here",
+      "clientSecret": "your-client-secret-here",
+      "redirectUri": "http://127.0.0.1:${websiteport}/oauth2/callback",
+      "websiteport": 8080
+    },
+
+    "gsAuth": {
+      "enable": true,
+      "serverId": "cube-gs-main",
+      "allowedServerIds": ["cube-gs-main"],
+      "allowedSourceIps": ["178.239.114.62", "178.239.114.248", "127.0.0.1", "::1"],
+      "secretEnv": "CUBE_GS_BACKEND_SECRET",
+      "secret": "31b39717-a9e7-4c4b-9c15-c4175d3da170",
+      "ttlSeconds": 120,
+      "joinTtlSeconds": 120,
+      "clockSkewSeconds": 30,
+      "nonceTtlSeconds": 90,
+      "consumeOnValidate": true
+    },
+
+    "launchOnly": {
+      "enable": true,
+      "launcherSecret": "d9e2a5f2-020b-47f9-9da9-62beac8ad2e9",
+      "nonOfficialLauncherWebhookUrl": "https://discordapp.com/api/webhooks/1495478322321166518/jYCN4u61VfF-Ob5oy4hHOlbOsTKsRMCxcXjqsnAcnXU4UDTUvwzsT6RppuuNnX2Gzc9K",
+      "bannedIpWebhookUrl": "https://discordapp.com/api/webhooks/1495478322321166518/jYCN4u61VfF-Ob5oy4hHOlbOsTKsRMCxcXjqsnAcnXU4UDTUvwzsT6RppuuNnX2Gzc9K",
+      "ticketTtlSeconds": 120,
+      "sessionTtlSeconds": 31536000,
+      "requireIpMatch": false
+    },
+
+    "launcherVersion": {
+      "minimum": "1.0",
+      "latest": "1.0"
+    },
+
+    "launcherBeta": {
+      "enable": true,
+      "requiredRoleId": "1503113197639565554",
+      "ownerRoleId": "1482428047654387923",
+      "startAt": "2026-05-12T07:00:00+02:00",
+      "endAt": "2026-05-15T07:00:00+02:00",
+      "timeZone": "Europe/Paris"
+    },
+
+    "LauncherOAuth": {
+      "clientId": "1502739989774078064",
+      "clientSecret": "IAHz9OyvCznI1AFrUBMWmROTSmu_Gtz2",
+      "redirectUri": "https://api.fatalfn.win/api/launcher/discord/callback"
+    },
+
+    "//": "to add more gameserver on 'gameServerIP' add ip:port:playlist",
+    "matchmakerIP": "178.239.114.62:8081",
+    "matchmakerHeartbeatTtlSeconds": 15,
+    "gameServerIP": ["178.239.114.248:7777:playlist_defaultsolo", "178.239.114.248:7777:playlist_showdownalt_solo"],
+    
+    "//": "For 'BattlePassSeason' enter only the number of your season (from 2 to 20)",
+    "bEnableBattlepass": false,
+    "bBattlePassSeason": 2,
+
+    "//": "For 'bVersionJoinable' you can set a season that is also `9.10` and not just `9`",
+    "bEnableOnlyOneVersionJoinable": true,
+    "bVersionJoinable": 18.40,
+
+    "//": "If 'bUseAutoRotate' is enabled it will automatically rotate the item shop using the time you put in 'bRotateTime', you can select the season limit with 'bSeasonLimit' (please only do up to season 10, it might be a bit broken after!), 'bRotateTime' means what time the shop rotates (it is UTC and uses the 24 hour clock, not 12 hour), for 'bItemShopWebhook' you have to generate a webhook to your item shop channel and put the link here, you can select how many cosmetics are in daily: 'bDailyItemsAmount' and featured: 'bFeaturedItemsAmount'",
+    "bUseAutoRotate": false,
+    "bEnableAutoRotateDebugLogs": true,
+    "bEnableDiscordWebhook": false,
+    "bChapterlimit": "1",
+    "bSeasonlimit": "18",
+    "bRotateTime": "00:00",
+    "bExcludedItems": ["CID_VIP_Athena_Commando_M_GalileoGondola_SG", "CID_636_Athena_Commando_M_GalileoGondola_78MFZ", "CID_637_Athena_Commando_M_GalileoOutrigger_7Q0YU", "CID_VIP_Athena_Commando_M_GalileoFerry_SG", "CID_VIP_Athena_Commando_F_GalileoRocket_SG", "CID_568_Athena_Commando_M_RebirthSoldier"],
+    "bItemShopChannelId": "1468342713832313035",
+    "bDailyItemsAmount": 6,
+    "bFeaturedItemsAmount": 2,
+
+    "//": "If 'bUseCustomShopDate' is enabled, the item shop will be filled with cosmetics that were added on the date specified in 'bCustomShopDate' (format: YYYY-MM-DD). This overrides the random auto-rotation. Set to false to use normal random rotation.",
+    "bUseCustomShopDate": false,
+    "bCustomShopDate": "",
+
+    "//": "By enabling reports.bEnableReports, in-game player reports and bug reports are sent to separate Discord webhooks. Keep the URLs empty until you create the webhooks.",
+    "reports": {
+      "bEnableReports": true,
+      "playerWebhookUrl": "https://discordapp.com/api/webhooks/1502820677512724484/CVqeYLe__VANUvrNUBzYBXtDU8OifGStGjtIzGa1pE6-kJ_V0pkIkaWGL3NHo_ZE0j95",
+      "bugWebhookUrl": "https://discordapp.com/api/webhooks/1502820510990598194/pFppuu9O3J-s70Wro1tunYRexrBj8Njrs5jYrJxZfZTjE64uE0OvhR6Rg0ULbNcvNTaf",
+      "rateLimitSeconds": 45
+    },
+
+    "//": "If bCompletedSeasonalQuests is set to 'true' it will set all quests except daily quests as completed",
+    "bCompletedSeasonalQuests": false,
+
+    "//": "If 'bEnableSACRewards' is enabled it will give the person who supports a creator a percentage of vbucks based on how much percentage you put in 'bPercentageSACRewards' it will give in vbucks, so if you set '25%' and there is a 1000 item in the shop vbucks will give 250 vbucks to the one who supports a creator",
+    "bEnableSACRewards": false,
+    "bPercentageSACRewards": 0,
+
+    "//": "For 'bRestartTime' use this format: [number][y, M, w, d, h, m, s] so 5m, for Month u need to add the big M not the m",
+    "bEnableAutoBackendRestart": false,
+    "bRestartTime": "",
+
+    "//": "If active it will send a message in the channel when the backend goes online",
+    "bEnableBackendStatus": false,
+    "bBackendStatusChannelId": "",
+
+    "//": "Use HTTPS (For VPS Side Only, Or If You Were To Setup  A Type Record To Your Own Public Adress From Your Domain) (You Also Need To Change The Examples In SSl Folder!)",
+    "bEnableHTTPS": false, "//": "Only Enable if You Have SSL Certificate In The ssl Folder",
+    "ssl": {
+        "cert": "./ssl/example_certificate.crt",
+        "//ca//": "./ssl/example_ca_bundle.crt", "//": "Optional (Only If You Have A CA Bundle from your ssl certificate)",
+        "key": "./ssl/example_private.key"
+    },
+
+    "//": "The Caldera Service is used for newer versions of the game! For see what season are now supported look CalderaService/guids.json and add the version on 'bGameVersion'",
+    "bEnableCalderaService": false,
+    "bGameVersion": "27.11",
+    "bCalderaServicePort": 5000,
+
+    "//": "These are all the events you can add to the game, like the rift in the sky!",
+    "bEnableGeodeEvent": false,
+    "geodeEventStartDate": "2020-01-01T00:00:00.000Z",
+    "bEnableCrackInTheSky": false,
+    "bEnableS4OddityPrecursor": false,
+    "bEnableS4OddityExecution": false,
+    "S4OddityEventStartDate": "2020-01-01T00:00:00.000Z",
+    "S4OddityEventsInterval": 0,
+    "bEnableS5OddityPrecursor": false,
+    "S5OddityPrecursorDate": "2020-01-01T00:00:00.000Z",
+    "bEnableS5OddityExecution": false,
+    "S5OddityExecutionDate": "2020-01-01T00:00:00.000Z",
+    "bEnableCubeLightning": false,
+    "cubeSpawnDate": "2020-01-01T00:00:00.000Z",
+    "bEnableBlockbusterRiskyEvent": false,
+    "bEnableCubeLake": false,
+    "cubeLakeDate": "2020-01-01T00:00:00.000Z",
+
+    "//": "Anti-Cheat system configuration",
+    "anticheat": {
+        "enabled": true,
+        "webhooks": {
+            "enabled": true,
+            "url": "https://discord.com/api/webhooks/1492323333952503808/Ha-4osmb91OEK7zGUivw58JIj_mm4RnU-6V5HKqd8AWKuvu1LhxdhAOy1OVPO_0DGOy8",
+            "minSeverity": "HIGH"
+        },
+        "autoban": {
+            "enabled": true,
+            "minConfidence": 85
+        },
+        "logging": {
+            "detailedLogs": true,
+            "logAllVerifications": false
+        }
+    }
+}

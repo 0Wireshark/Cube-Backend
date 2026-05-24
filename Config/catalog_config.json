@@ -1,0 +1,51 @@
+{
+  "//": "BR Item Shop Config",
+  "daily1": {
+    "itemGrants": [
+      "AthenaCharacter:CID_424_Athena_Commando_M_Vigilante"
+    ],
+    "price": 1500
+  },
+  "daily2": {
+    "itemGrants": [
+      "AthenaCharacter:CID_424_Athena_Commando_M_Vigilante"
+    ],
+    "price": 700
+  },
+  "daily3": {
+    "itemGrants": [
+      "AthenaDance:EID_Psychic_7SO2Z"
+    ],
+    "price": 200
+  },
+  "daily4": {
+    "itemGrants": [
+      "AthenaCharacter:CID_801_Athena_Commando_F_GolfSummer"
+    ],
+    "price": 0
+  },
+  "daily5": {
+    "itemGrants": [
+      "AthenaGlider:Glider_ID_095_Witch"
+    ],
+    "price": 500
+  },
+  "daily6": {
+    "itemGrants": [
+      "AthenaPickaxe:Pickaxe_ID_138_Gnome"
+    ],
+    "price": 800
+  },
+  "featured1": {
+    "itemGrants": [
+      "AthenaCharacter:CID_A_250_Athena_Commando_F_ZombieElastic_B"
+    ],
+    "price": 2000
+  },
+  "featured2": {
+    "itemGrants": [
+      "AthenaCharacter:CID_A_215_Athena_Commando_F_SunriseCastle_48TIZ"
+    ],
+    "price": 2500
+  }
+}

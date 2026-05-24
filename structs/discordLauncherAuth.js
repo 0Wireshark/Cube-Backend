@@ -465,6 +465,19 @@ async function createLaunchTicket(user, config = {}) {
   }
 
   const sessionExpiresAt = Date.now() + getLaunchSessionTtlMs(config);
+  const existingTicket = await LaunchTicket.findOne({ accountId: user.accountId }).lean();
+  if (existingTicket) {
+    if (new Date(existingTicket.expiresAt) > new Date()) {
+      return {
+        login: existingTicket.login,
+        password: existingTicket.password,
+        launchSessionToken: createLaunchSessionToken(user.accountId, sessionExpiresAt, config)
+      };
+    }
+
+    await LaunchTicket.deleteOne({ login: existingTicket.login }).catch(() => {});
+  }
+
   const ticketId = crypto.randomBytes(24).toString("hex");
   const ticketPassword = crypto.randomBytes(32).toString("hex");
   const login = `${LAUNCH_TICKET_PREFIX}${ticketId}${LAUNCH_TICKET_DOMAIN}`;
@@ -513,12 +526,15 @@ async function consumeLaunchTicket(login, password) {
     return null;
   }
 
-  const ticket = await LaunchTicket.findOneAndDelete({ login: normalizedLogin }).lean();
-
+  const ticket = await LaunchTicket.findOne({ login: normalizedLogin }).lean();
   if (!ticket) return null;
-  if (new Date(ticket.expiresAt) < new Date()) return null;
+  if (new Date(ticket.expiresAt) < new Date()) {
+    await LaunchTicket.deleteOne({ login: normalizedLogin }).catch(() => {});
+    return null;
+  }
   if (ticket.password !== normalizedPassword) return null;
 
+  await LaunchTicket.deleteOne({ login: normalizedLogin }).catch(() => {});
   return User.findOne({ accountId: ticket.accountId }).lean();
 }
 

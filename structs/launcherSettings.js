@@ -3,25 +3,16 @@ const path = require("path");
 
 const SETTINGS_PATH = path.join(__dirname, "..", "Saved", "launcher-settings.json");
 
-let cachedSettings = null;
-
 function loadSettings() {
-    if (cachedSettings) {
-        return cachedSettings;
-    }
-
     try {
-        cachedSettings = JSON.parse(fs.readFileSync(SETTINGS_PATH, "utf8"));
+        return JSON.parse(fs.readFileSync(SETTINGS_PATH, "utf8"));
     } catch (_err) {
-        cachedSettings = {};
+        return {};
     }
-
-    return cachedSettings;
 }
 
 function saveSettings(settings) {
     fs.mkdirSync(path.dirname(SETTINGS_PATH), { recursive: true });
-    cachedSettings = settings;
     fs.writeFileSync(SETTINGS_PATH, `${JSON.stringify(settings, null, 2)}\n`);
 }
 

@@ -606,6 +606,7 @@ app.post("/api/launcher/launch-ticket", async (req, res) => {
                     launchEmail: sessionTicket.ticket.login,
                     launchPassword: sessionTicket.ticket.password,
                     launch_ticket: sessionTicket.ticket.login,
+                    launchTicket: sessionTicket.ticket.login,
                     launchSessionToken: sessionTicket.launchSessionToken || sessionTicket.ticket.launchSessionToken
                 });
             }
@@ -637,6 +638,7 @@ app.post("/api/launcher/launch-ticket", async (req, res) => {
                 launchEmail: ticket.login,
                 launchPassword: ticket.password,
                 launch_ticket: ticket.login,
+                launchTicket: ticket.login,
                 launchSessionToken: ticket.launchSessionToken
             });
         } catch (err) {
@@ -672,6 +674,8 @@ app.post("/api/launcher/launch-ticket", async (req, res) => {
             username: user.username,
             launchEmail: ticket.login,
             launchPassword: ticket.password,
+            launch_ticket: ticket.login,
+            launchTicket: ticket.login,
             launchSessionToken: ticket.launchSessionToken,
             beta: betaAccess.beta
         });

@@ -15,8 +15,7 @@ Professional-grade anti-cheat and ban evasion detection system for CUBE Backend 
   - Behavior tracking (IP history, hardware changes, account patterns)
 
 - **Score-Based Decision System**
-  - Trust Score (0-100): Machine reliability
-  - Spoof Score (0-100): Spoofing probability
+  - Trust Score (0-100): Machine reliabilityjesua9°ZDJFQJNEDFIOGPnqiovENDIOGSNIGSNBGSBN%LV SXRNDJOGVRSBDNFJGUOBNRDSFOJUGBNRFDIOUBNGFCDXOIUNHBFRTDIOUTHNB- Spoof Score (0-100): Spoofing probability
   - Evasion Score (0-100): Ban evasion probability
   - Final Score: Weighted combination of all scores
 
